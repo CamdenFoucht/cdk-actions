@@ -1,9 +1,9 @@
 name: CDK github action
 
-on: workflow_dispatch
+on: [push, workflow_dispatch]
 
 jobs:
-  aws_cdk_job:
+  cdk_skill_deployment:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -16,10 +16,10 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ secrets.AWS_REGION }}
       
-    - name: install npm
+    - name: Install npm
       run: 'sudo apt update -y && sudo apt install nodejs npm -y'
 
-    - name: npm install
+    - name: Install package dependencies
       run: npm install
     
     - name: Install AWS CDK
@@ -28,14 +28,14 @@ jobs:
     - name: CDK synth
       run: cdk synth
 
-    - name: CDK Bootstrap ?
+    - name: CDK bootstrap accounts
       run: cdk bootstrap
 
-    - name: CDK deploy
+    - name: CDK deploy skill
       run: cdk deploy --require-approval=never
 
-    - name: build
+    - name: Build local project
       run: npm run-script test
 
-    - name: test
+    - name: Testing
       run: npm run-script test
