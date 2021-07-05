@@ -3,7 +3,7 @@ name: CDK github action
 on: workflow_dispatch
 
 jobs:
-  aws_cdk:
+  aws_cdk_job:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
