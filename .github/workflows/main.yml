@@ -35,4 +35,5 @@ jobs:
       run: cdk deploy --require-approval=never
 
     - name: testing
-      run: npm build && npx test
+      run: npm run-script build
+      run: npm run-script test
