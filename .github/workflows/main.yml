@@ -24,7 +24,6 @@ jobs:
 
   - name: CDK synth
     run: cdk synth
-    working-directory
 
   - name: npm install
     run: npm install
