@@ -1,6 +1,6 @@
 name: CDK github action
 
-on: [push]
+on: workflow_dispatch
 
 jobs:
   aws_cdk:
@@ -26,10 +26,10 @@ jobs:
     run: cdk synth
     working-directory
 
-- name: npm install
-  run: npm install
+  - name: npm install
+    run: npm install
 
-- name: CDK Deployment
-  run: cdk deploy
+  - name: CDK deploy
+    run: cdk deploy
 
-- run: npm test
+  - run: npx test
