@@ -32,4 +32,5 @@ jobs:
   - name: CDK deploy
     run: cdk deploy
 
-  - run: npx test
+  - name: testing
+    run: npx test
