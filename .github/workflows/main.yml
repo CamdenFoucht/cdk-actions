@@ -28,8 +28,11 @@ jobs:
     - name: CDK synth
       run: cdk synth
 
+    - name: CDK Bootstrap ?
+      run: cdk bootstrap
+
     - name: CDK deploy
       run: cdk deploy
 
     - name: testing
-      run: npx test
+      run: npm build && npx test
