@@ -1,9 +1,9 @@
-name: Deploy and test CDK Skill
+name: cdk actions
 
 on: [push, workflow_dispatch]
 
 jobs:
-  skill_cdk_deployment:
+  cdk_deployment:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
