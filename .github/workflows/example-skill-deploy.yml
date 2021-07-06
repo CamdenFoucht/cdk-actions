@@ -28,10 +28,10 @@ jobs:
     - name: CDK synth
       run: cdk synth
 
-    - name: CDK bootstrap
+    - name: CDK bootstrap accounts
       run: cdk bootstrap
 
-    - name: CDK deploy 
+    - name: CDK deploy skill
       run: cdk deploy --require-approval=never
 
     - name: Build local project
